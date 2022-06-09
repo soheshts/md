@@ -1,1 +1,1 @@
-[Tales about trident](/tales-about-trident)
+[Tales about trident](/md/tales-about-trident)
