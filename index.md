@@ -1,245 +1,222 @@
----
-__Advertisement :)__
+# Getting Started with MkDocs
 
-- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
-  resize in browser.
-- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
-  i18n with plurals support and easy syntax.
-
-You will like those projects!
+An introductory tutorial!
 
 ---
 
-# h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+## Installation
 
+To install MkDocs, run the following command from the command line:
 
-## Horizontal Rules
-
-___
-
----
-
-***
-
-
-## Typographic replacements
-
-Enable typographer option to see result.
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-
-
-## Emphasis
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-
-
-## Blockquotes
-
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-
-## Lists
-
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-Block code "fences"
-
-```
-Sample text here...
+```bash
+pip install mkdocs
 ```
 
-Syntax highlighting
+For more details, see the [Installation Guide].
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
+## Creating a new project
 
-console.log(foo(5));
+Getting started is super easy. To create a new project, run the following
+command from the command line:
+
+```bash
+mkdocs new my-project
+cd my-project
 ```
 
-## Tables
+Take a moment to review the initial project that has been created for you.
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+![The initial MkDocs layout](img/initial-layout.png)
 
-Right aligned columns
+There's a single configuration file named `mkdocs.yml`, and a folder named
+`docs` that will contain your documentation source files (`docs` is
+the default value for the [docs_dir] configuration setting). Right now the `docs`
+folder just contains a single documentation page, named `index.md`.
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+MkDocs comes with a built-in dev-server that lets you preview your documentation
+as you work on it. Make sure you're in the same directory as the `mkdocs.yml`
+configuration file, and then start the server by running the `mkdocs serve`
+command:
 
+```bash
+$ mkdocs serve
+INFO    -  Building documentation...
+INFO    -  Cleaning site directory
+[I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
+[I 160402 15:50:43 handlers:58] Start watching changes
+[I 160402 15:50:43 handlers:60] Start detecting changes
+```
 
-## Links
+Open up `http://127.0.0.1:8000/` in your browser, and you'll see the default
+home page being displayed:
 
-[link text](http://dev.nodeca.com)
+![The MkDocs live server](img/screenshot.png)
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+The dev-server also supports auto-reloading, and will rebuild your documentation
+whenever anything in the configuration file, documentation directory, or theme
+directory changes.
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+Open the `docs/index.md` document in your text editor of choice, change the
+initial heading to `MkLorum`, and save your changes. Your browser will
+auto-reload and you should see your updated documentation immediately.
 
+Now try editing the configuration file: `mkdocs.yml`. Change the
+[`site_name`][site_name] setting to `MkLorum` and save the file.
 
-## Images
+```yaml
+site_name: MkLorum
+site_url: https://example.com/
+```
 
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+Your browser should immediately reload, and you'll see your new site name take
+effect.
 
-Like links, Images also have a footnote style syntax
+![The site_name setting](img/site-name.png)
 
-![Alt text][id]
+!!! note
 
-With a reference later in the document defining the URL location:
+    The [`site_name`][site_name] and [`site_url`][site_url] configuration
+    options are the only two required options in your configuration file. When
+    you create a new project, the `site_url` option is assigned the placeholder
+    value: `https://example.com`. If the final location is known, you can change
+    the setting now to point to it. Or you may choose to leave it alone for now.
+    Just be sure to edit it before you deploy your site to a production server.
 
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+## Adding pages
 
+Now add a second page to your documentation:
 
-## Plugins
+```bash
+curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' > docs/about.md
+```
 
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
+As our documentation site will include some navigation headers, you may want to
+edit the configuration file and add some information about the order, title, and
+nesting of each page in the navigation header by adding a [`nav`][nav]
+setting:
 
+```yaml
+site_name: MkLorum
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - About: about.md
+```
 
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
+Save your changes and you'll now see a navigation bar with `Home` and `About`
+items on the left as well as `Search`, `Previous`, and `Next` items on the
+right.
 
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
+![Screenshot](img/multipage.png)
 
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
+Try the menu items and navigate back and forth between pages. Then click on
+`Search`. A search dialog will appear, allowing you to search for any text on
+any page. Notice that the search results include every occurrence of the search
+term on the site and links directly to the section of the page in which the
+search term appears. You get all of that with no effort or configuration on your
+part!
 
+![Screenshot](img/search.png)
 
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+## Theming our documentation
 
-- 19^th^
-- H~2~O
+Now change the configuration file to alter how the documentation is displayed by
+changing the theme. Edit the `mkdocs.yml` file and add a [`theme`][theme] setting:
 
+```yaml
+site_name: MkLorum
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs
+```
 
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+Save your changes, and you'll see the ReadTheDocs theme being used.
 
-++Inserted text++
+![Screenshot](img/readthedocs.png)
 
+## Changing the Favicon Icon
 
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
+By default, MkDocs uses the [MkDocs favicon] icon. To use a different icon, create
+an `img` subdirectory in the `docs` directory and copy your custom `favicon.ico`
+file to that directory. MkDocs will automatically detect and use that file as your
+favicon icon.
 
-==Marked text==
+[MkDocs favicon]: img/favicon.ico
 
+## Building the site
 
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+That's looking good. You're ready to deploy the first pass of your `MkLorum`
+documentation. First build the documentation:
 
-Footnote 1 link[^first].
+```bash
+mkdocs build
+```
 
-Footnote 2 link[^second].
+This will create a new directory, named `site`. Take a look inside the
+directory:
 
-Inline footnote^[Text of inline footnote] definition.
+```bash
+$ ls site
+about  fonts  index.html  license  search.html
+css    img    js          mkdocs   sitemap.xml
+```
 
-Duplicated footnote reference[^second].
+Notice that your source documentation has been output as two HTML files named
+`index.html` and `about/index.html`. You also have various other media that's
+been copied into the `site` directory as part of the documentation theme. You
+even have a `sitemap.xml` file and `mkdocs/search_index.json`.
 
-[^first]: Footnote **can have markup**
+If you're using source code control such as `git` you probably don't want to
+check your documentation builds into the repository. Add a line containing
+`site/` to your `.gitignore` file.
 
-    and multiple paragraphs.
+```bash
+echo "site/" >> .gitignore
+```
 
-[^second]: Footnote text.
+If you're using another source code control tool you'll want to check its
+documentation on how to ignore specific directories.
 
+## Other Commands and Options
 
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+There are various other commands and options available. For a complete list of
+commands, use the `--help` flag:
 
-Term 1
+```bash
+mkdocs --help
+```
 
-:   Definition 1
-with lazy continuation.
+To view a list of options available on a given command, use the `--help` flag
+with that command. For example, to get a list of all options available for the
+`build` command run the following:
 
-Term 2 with *inline markup*
+```bash
+mkdocs build --help
+```
 
-:   Definition 2
+## Deploying
 
-        { some code, part of Definition 2 }
+The documentation site that you just built only uses static files so you'll be
+able to host it from pretty much anywhere. Simply upload the contents of the
+entire `site` directory to wherever you're hosting your website from and
+you're done. For specific instructions on a number of common hosts, see the
+[Deploying your Docs][deploy] page.
 
-    Third paragraph of definition 2.
+## Getting help
 
-_Compact style:_
+See the [User Guide] for more complete documentation of all of MkDocs' features.
 
-Term 1
-  ~ Definition 1
+To get help with MkDocs, please use the [GitHub discussions] or [GitHub issues].
 
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
+[Installation Guide]: user-guide/installation.md
+[docs_dir]: user-guide/configuration.md#docs_dir
+[deploy]: user-guide/deploying-your-docs.md
+[nav]: user-guide/configuration.md#nav
+[GitHub discussions]: https://github.com/mkdocs/mkdocs/discussions
+[GitHub issues]: https://github.com/mkdocs/mkdocs/issues
+[site_name]: user-guide/configuration.md#site_name
+[site_url]: user-guide/configuration.md#site_url
+[theme]: user-guide/configuration.md#theme
+[User Guide]: user-guide/index.md
