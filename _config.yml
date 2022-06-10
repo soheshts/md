@@ -1,5 +1,5 @@
 title: Sohesh's blog
-remote_theme:  TaylanTatli/Moon
+remote_theme: joshgerdes/jekyll-uno
 github:
   is_project_page: false
   is_user_page: true
