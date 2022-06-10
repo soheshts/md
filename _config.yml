@@ -5,3 +5,5 @@ github:
   owner_name: Sohesh
   owner_url: https://soheshts.github.io/
   owner_gravatar_url: https://soheshts.github.io/images/me.jpg
+
+theme: jekyll-theme-hacker
