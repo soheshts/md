@@ -68,7 +68,7 @@ He found it very hard to believe. But there is no other way to explain things. H
 
 He sat there for 5 minutes. There must be some way to get out of this. "This must be like a dream". He pinched himself. "Aww" he felt the pain. He went to the tap and poured some water to his face. Nothing happened. He became more tensed. "The fall… we wake up from dreams from a fall". He sat on the chair and stretched back. He fell down. Nothing happened. He went to the door again but this time, he could not open it.
 
-"Oh my God. What have I done?". He felt cold. A small wind came inside through the window. He looked outside. He could not see a single human being outside. Not even cars or animals. The ground is a long way down. He went to the door again. No change, he is still trapped.
+"Oh my God.. What have I done?". He felt cold. A small wind came inside through the window. He looked outside. He could not see a single human being outside. Not even cars or animals. The ground is a long way down. He went to the door again. No change, he is still trapped.
 
 "No, they cannot hold me in here. I must go. There must be a way outside". He checked his pockets again, hoping to find his wallet. It is there. He opened it looked at the photograph of his wife and daughter. "May be this is it. Maybe we will meet now or may be later". He put his wallet back in the pocket and climbed on the window. He took a deep breath and took one step forward.
 
