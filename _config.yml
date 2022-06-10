@@ -1,5 +1,5 @@
 title: Sohesh's blog
-theme: jekyll-theme-cayman
+remote-theme: mmistakes/so-simple-theme
 github:
   is_project_page: false
   is_user_page: true
